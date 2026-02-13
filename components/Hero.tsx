@@ -14,6 +14,27 @@ export default function Hero() {
             </div>
 
             <div className="max-w-5xl w-full text-center space-y-8 z-10">
+                {/* Profile Photo */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative w-32 h-32 mx-auto mb-8 rounded-full p-1 bg-gradient-to-r from-primary to-accent"
+                >
+                    <div className="w-full h-full rounded-full overflow-hidden bg-background">
+                        {/* User should replace this with their actual photo */}
+                        <img
+                            src="/profile.jpg"
+                            alt="Profile"
+                            className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                            onError={(e) => {
+                                // Fallback if image not found
+                                (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=Shubhankar+Rana&background=0D8ABC&color=fff&size=128";
+                            }}
+                        />
+                    </div>
+                </motion.div>
+
                 {/* Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -79,10 +100,22 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="flex flex-col sm:flex-row gap-4 justify-center pt-8"
                 >
-                    <button className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
-                        View Research
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={async () => {
+                            try {
+                                await fetch("https://dgydqwmkm7.execute-api.us-east-1.amazonaws.com/resume", { method: "POST" });
+                            } catch (e) {
+                                console.error("Tracking failed", e);
+                            }
+                        }}
+                        className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                    >
+                        Download Resume
                         <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </a>
                     <button className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-colors border border-secondary-foreground/10">
                         Contact Me
                     </button>

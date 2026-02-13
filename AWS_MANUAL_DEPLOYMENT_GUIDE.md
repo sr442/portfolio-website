@@ -90,12 +90,15 @@ You need to create 3 functions. For each one:
 
 1. Go to **S3** > **Create bucket**.
 2. Name: `your-unique-portfolio-name` (e.g., `shubhankar-portfolio-v1`).
-3. **Uncheck** "Block all public access" (acknowledge the warning).
-4. Create bucket.
-5. Go to bucket > **Properties** > **Static website hosting** > Edit > **Enable**.
+3.  **Uncheck** "Block all public access".
+    *   **CRITICAL Step**: You must uncheck this box.
+    *   Check the box that says "I acknowledge that the current settings might result in this bucket and the objects within becoming public."
+4.  Create bucket.
+5.  *(If you already created it)*: Go to **Permissions** > **Block public access (bucket settings)** > **Edit** > **Uncheck** "Block all public access" > **Save changes** > Type `confirm`.
+6. Go to bucket > **Properties** > **Static website hosting** > Edit > **Enable**.
     *   Index document: `index.html`
     *   Error document: `404.html`
-6. Go to bucket > **Permissions** > **Bucket policy**. Paste this (replace `YOUR_BUCKET_NAME`):
+7. Go to bucket > **Permissions** > **Bucket policy**. Paste this (replace `YOUR_BUCKET_NAME`):
     ```json
     {
         "Version": "2012-10-17",
