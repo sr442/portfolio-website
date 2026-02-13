@@ -29,7 +29,14 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1 # Change if your bucket is in a different region
+          aws-region: us-east-1
+
+      - name: Debug AWS Connection
+        run: |
+          aws sts get-caller-identity
+          echo "Listing buckets to verify permissions..."
+          aws s3 ls
+          echo "Target Bucket: ${{ secrets.S3_BUCKET_NAME }}"
 
       - name: Deploy to S3
         run: |
