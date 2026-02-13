@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  /* slate-950 */
+  --foreground: #f8fafc;
+  /* slate-50 */
+
+  --primary: #3b82f6;
+  /* blue-500 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #1e293b;
+  /* slate-800 */
+  --secondary-foreground: #f8fafc;
+
+  --accent: #8b5cf6;
+  /* violet-500 */
+  --accent-foreground: #ffffff;
+
+  --muted: #0f172a;
+  /* slate-900 */
+  --muted-foreground: #94a3b8;
+  /* slate-400 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+}
+
+body {
+  background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--background) 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}

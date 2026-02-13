@@ -1,0 +1,93 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, Brain, TrendingUp, Cpu } from "lucide-react";
+
+export default function Hero() {
+    return (
+        <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-6 lg:px-8">
+            {/* Background gradients */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+                <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse delay-700" />
+                <div className="absolute bottom-[-20%] left-[20%] w-[40%] h-[40%] bg-indigo-600/20 rounded-full blur-[120px] animate-pulse delay-1000" />
+            </div>
+
+            <div className="max-w-5xl w-full text-center space-y-8 z-10">
+                {/* Badge */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-secondary-foreground/10 backdrop-blur-sm"
+                >
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-sm font-medium text-muted-foreground">Available for new opportunities</span>
+                </motion.div>
+
+                {/* Main Headline */}
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground"
+                >
+                    AI & Time Series Researcher
+                    <br />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                        Beating Classical Baselines
+                    </span>
+                </motion.h1>
+
+                {/* Subheadline */}
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
+                >
+                    Building production-grade forecasting systems and RAG agents.
+                    Specialized in hybrid ARIMA-LSTM architectures and large-scale time series analysis.
+                </motion.p>
+
+                {/* Tech Stack Signals */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="flex flex-wrap justify-center gap-4 pt-4"
+                >
+                    {[
+                        { icon: TrendingUp, text: "Time Series (Informer, TFT)" },
+                        { icon: Brain, text: "Hybrid Architectures" },
+                        { icon: Cpu, text: "Production AI Systems" },
+                    ].map((item, idx) => (
+                        <div
+                            key={idx}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary/30 border border-secondary-foreground/10 text-sm font-medium"
+                        >
+                            <item.icon className="w-4 h-4 text-primary" />
+                            {item.text}
+                        </div>
+                    ))}
+                </motion.div>
+
+                {/* CTA Buttons */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex flex-col sm:flex-row gap-4 justify-center pt-8"
+                >
+                    <button className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
+                        View Research
+                        <ArrowRight className="w-4 h-4" />
+                    </button>
+                    <button className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-colors border border-secondary-foreground/10">
+                        Contact Me
+                    </button>
+                </motion.div>
+            </div>
+        </section>
+    );
+}
