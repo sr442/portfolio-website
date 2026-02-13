@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI & Time Series Portfolio Website
 
-## Getting Started
+![Build Status](https://github.com/sr442/portfolio-website/actions/workflows/deploy_frontend.yml/badge.svg)
 
-First, run the development server:
+A serverless portfolio website built with Next.js, diverse AWS services (Lambda, DynamoDB, API Gateway), and Terraform.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Frontend**: Next.js 14, Tailwind CSS, Framer Motion, Recharts.
+- **Backend**: AWS Lambda (Node.js), API Gateway.
+- **Database**: DynamoDB (On-Demand).
+- **Infrastructure**: Managing via Terraform.
+- **CI/CD**: GitHub Actions for automated deployment to S3.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project auto-deploys to AWS S3 on every push to `main`.
 
-## Learn More
+### Prerequisites for CI/CD
 
-To learn more about Next.js, take a look at the following resources:
+Ensure you have added the following Secrets to your GitHub Repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `S3_BUCKET_NAME`
