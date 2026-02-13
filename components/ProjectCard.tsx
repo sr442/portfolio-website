@@ -18,7 +18,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             viewport={{ once: true }}
             className="group relative rounded-xl border border-secondary bg-secondary/20 p-6 hover:bg-secondary/30 transition-colors"
         >
-            <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${project.color} opacity-0 group-hover:opacity-5 transition-opacity`} />
+            <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity`} />
 
             <div className="relative z-10 space-y-4">
                 <div className="flex justify-between items-start">
