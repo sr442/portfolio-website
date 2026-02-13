@@ -23,3 +23,6 @@ Ensure you have added the following Secrets to your GitHub Repository:
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
 - `S3_BUCKET_NAME`
+- `AWS_REGION` (optional, defaults to us-east-1)
+
+*Permission Note: The IAM User must have `AmazonS3FullAccess` policy attached.*
