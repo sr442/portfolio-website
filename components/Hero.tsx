@@ -53,10 +53,10 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground"
                 >
-                    AI & Time Series Researcher
+                    Shubhankar Rana
                     <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                        Beating Classical Baselines
+                    <span className="text-3xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                        Data Science & Management • MS IIT Ropar & IIM Amritsar
                     </span>
                 </motion.h1>
 
@@ -67,8 +67,8 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
                 >
-                    Building production-grade forecasting systems and RAG agents.
-                    Specialized in hybrid ARIMA-LSTM architectures and large-scale time series analysis.
+                    Benchmarking complex forecasting models (Informer, TFT, Mamba) and building AI-driven solutions.
+                    Proven track record in financial analytics, operational optimization, and hybrid ARIMA+LSTM architectures.
                 </motion.p>
 
                 {/* Tech Stack Signals */}
@@ -79,9 +79,9 @@ export default function Hero() {
                     className="flex flex-wrap justify-center gap-4 pt-4"
                 >
                     {[
-                        { icon: TrendingUp, text: "Time Series (Informer, TFT)" },
-                        { icon: Brain, text: "Hybrid Architectures" },
-                        { icon: Cpu, text: "Production AI Systems" },
+                        { icon: TrendingUp, text: "Financial Forecasting" },
+                        { icon: Brain, text: "Generative AI & RAG" },
+                        { icon: Cpu, text: "Operational Analytics" },
                     ].map((item, idx) => (
                         <div
                             key={idx}
