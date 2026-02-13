@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, TrendingUp, Cpu } from "lucide-react";
+import { ArrowRight, Brain, TrendingUp, Cpu, Linkedin, Github } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -119,6 +119,31 @@ export default function Hero() {
                     <button className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-colors border border-secondary-foreground/10">
                         Contact Me
                     </button>
+                </motion.div>
+
+                {/* Social Links */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="flex justify-center gap-6 pt-8"
+                >
+                    <a
+                        href="https://www.linkedin.com/in/shubhankar-rana-a468661b4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-secondary/30 text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all hover:scale-110"
+                    >
+                        <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a
+                        href="https://github.com/sr442"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-secondary/30 text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all hover:scale-110"
+                    >
+                        <Github className="w-6 h-6" />
+                    </a>
                 </motion.div>
             </div>
         </section>
