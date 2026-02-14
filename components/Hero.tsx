@@ -2,10 +2,14 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Brain, TrendingUp, Cpu, Linkedin, Github } from "lucide-react";
+import { TypewriterEffect } from "./ui/typewriter-effect";
+
+import { BackgroundBeams } from "./ui/background-beams";
 
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-6 lg:px-8">
+            <BackgroundBeams />
             {/* Background gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
                 <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full blur-[120px] animate-pulse" />
@@ -46,19 +50,20 @@ export default function Hero() {
                     <span className="text-sm font-medium text-muted-foreground">Available for new opportunities</span>
                 </motion.div>
 
-                {/* Main Headline */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground"
-                >
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
                     Shubhankar Rana
                     <br />
-                    <span className="text-3xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                        Data Science & Management • MS IIT Ropar & IIM Amritsar
-                    </span>
-                </motion.h1>
+                    <TypewriterEffect
+                        words={[
+                            { text: "Data Science & Management" },
+                            { text: "MS IIT Ropar & IIM Amritsar" },
+                            { text: "Forecasting Specialist" },
+                            { text: "AI Engineer" },
+                        ]}
+                        className="text-3xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent py-2"
+                        cursorClassName="bg-primary h-8 sm:h-12 lg:h-16"
+                    />
+                </h1>
 
                 {/* Subheadline */}
                 <motion.p

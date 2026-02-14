@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Project } from "@/data/projects";
 import { ArrowUpRight } from "lucide-react";
+import { Spotlight } from "./ui/spotlight";
 
 interface ProjectCardProps {
     project: Project;
@@ -11,16 +12,12 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="group relative rounded-xl border border-secondary bg-secondary/20 p-6 hover:bg-secondary/30 transition-colors"
+        <Spotlight
+            className="group relative h-full flex flex-col p-6 hover:bg-secondary/20 transition-colors"
         >
             <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity`} />
 
-            <div className="relative z-10 space-y-4">
+            <div className="relative z-10 space-y-4 flex-1 flex flex-col">
                 <div className="flex justify-between items-start">
                     <div className={`p-3 rounded-lg bg-secondary/50 text-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors`}>
                         <project.icon className="w-6 h-6" />
@@ -53,6 +50,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                     ))}
                 </div>
             </div>
-        </motion.div>
+        </Spotlight>
     );
 }
