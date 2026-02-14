@@ -6,10 +6,11 @@ import Contact from "@/components/Contact";
 
 import Skills from "@/components/Skills";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between pb-24">
+    <main className="flex min-h-screen flex-col items-center justify-between pb-0 bg-background">
       <Navbar />
       <div id="hero" className="w-full">
         <Hero />
@@ -29,6 +30,7 @@ export default function Home() {
       <div id="contact" className="w-full">
         <Contact />
       </div>
+      <Footer />
     </main>
   );
 }
